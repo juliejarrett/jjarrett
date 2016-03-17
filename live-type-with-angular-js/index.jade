@@ -1,0 +1,8 @@
+script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js')
+script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js')
+
+div.container(ng-app="typeApp")
+  section.content(ng-controller="typeController")
+    h1 Jørn André Myrland
+    h2(ng-class="{typing: isTyping}") ..is{{ something }}
+      span.cursor &nbsp;

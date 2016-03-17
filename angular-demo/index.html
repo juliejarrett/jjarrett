@@ -1,0 +1,62 @@
+<style>
+@import url('//brick.a.ssl.fastly.net/Raleway:200,900');
+
+html {
+  font-size: 21px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+} 
+
+.container {
+  margin: 2em;
+}
+
+h1 {
+  font-family: 'Raleway';
+  font-size: 2.7em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: #222; 
+  margin-bottom: .3em;
+}
+
+h2 {
+  font-family: 'Raleway';
+  font-weight: 200;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+}
+
+h2 span.cursor {
+  display: inline-block;
+  background: #333;
+  margin-left: 1px;
+  width: .05em;
+ 
+  animation: blink 2s linear 0s infinite;
+}
+h2.typing span.cursor {
+  animation: none;
+}
+
+@keyframes blink {
+  0%   { background: #FFF }
+  47%  { background: #FFF }
+  50%  { background: #333 }
+  97%  { background: #333 }
+  100% { background: #FFF }
+}
+</style>
+
+
+script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js')
+script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js')
+
+div.container(ng-app="typeApp")
+  section.content(ng-controller="typeController")
+    h1 Jørn André Myrland
+    h2(ng-class="{typing: isTyping}") ..is{{ something }}
+      span.cursor &nbsp;
